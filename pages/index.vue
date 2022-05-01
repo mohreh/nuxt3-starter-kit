@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PlusIcon } from '@heroicons/vue/solid';
+import { Icon } from '@iconify/vue';
 
 const { x, y } = useMouse();
 
@@ -14,7 +14,8 @@ const increment = () => count.value++;
       @click="increment"
       class="px-5 mx-2 rounded border-solid border-2 border-gray-500"
     >
-      <PlusIcon class="h-5 w-5" />
+      <Icon icon="akar-icons:plus" />
+      <!-- <PlusIcon class="h-5 w-5" /> -->
     </button>
     <p>pos: {{ x }} and {{ y }}</p>
     <FormKit type="text" />
