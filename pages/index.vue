@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { PlusIcon } from '@heroicons/vue/solid';
 
+const { x, y } = useMouse();
+
 const count = ref(0);
 const increment = () => count.value++;
 </script>
@@ -14,5 +16,6 @@ const increment = () => count.value++;
     >
       <PlusIcon class="h-5 w-5" />
     </button>
+    <p>pos: {{ x }} and {{ y }}</p>
   </div>
 </template>
