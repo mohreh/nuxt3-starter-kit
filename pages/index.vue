@@ -18,6 +18,8 @@ const submit = async () => {
 
     if (res.error.value) {
       loginError.value = res.error.value;
+    } else {
+      loginError.value = '';
     }
     refresh();
   }

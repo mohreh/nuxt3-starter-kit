@@ -9,6 +9,7 @@
   "devDependencies": {
     "@iconify/vue": "^3.2.1",
     "@nuxtjs/tailwindcss": "^5.0.3",
+    "@types/jsonwebtoken": "^8.5.8",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "@vueuse/core": "^8.3.1",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "@formkit/nuxt": "^1.0.0-beta.6",
-    "@prisma/client": "3.13.0"
+    "@prisma/client": "3.13.0",
+    "jsonwebtoken": "^8.5.1"
   }
 }
