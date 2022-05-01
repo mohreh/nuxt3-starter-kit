@@ -8,15 +8,19 @@ const loginBody = reactive({
 const loginError = ref('');
 
 const submit = async () => {
-  const res = await useFetch('/api/users', {
-    method: 'POST',
-    body: loginBody,
-  });
+  if (!loginBody.email) {
+    loginError.value = 'please write your email';
+  } else {
+    const res = await useFetch('/api/users', {
+      method: 'POST',
+      body: loginBody,
+    });
 
-  if (res.error.value) {
-    loginError.value = res.error.value;
+    if (res.error.value) {
+      loginError.value = res.error.value;
+    }
+    refresh();
   }
-  refresh();
 };
 </script>
 
@@ -31,6 +35,7 @@ const submit = async () => {
 
     <p v-if="error">{{ error }}</p>
     <div v-else>{{ allUsers }}</div>
+    <p v-if="loginError">{{ loginError }}</p>
   </div>
 </template>
 
