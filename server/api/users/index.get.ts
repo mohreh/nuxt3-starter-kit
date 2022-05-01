@@ -1,5 +1,5 @@
-import prisma from '~~/server/prisma';
+import prisma from '~~/server/utils/prisma';
 
-export default () => {
+export default defineEventHandler(() => {
   return prisma.user.findMany();
-};
+});

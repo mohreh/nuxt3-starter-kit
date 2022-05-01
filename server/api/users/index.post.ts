@@ -1,6 +1,6 @@
-import prisma from '~~/server/prisma';
+import prisma from '~~/server/utils/prisma';
 
-export default async (req: unknown) => {
+export default defineEventHandler(async (req: unknown) => {
   const { email, name } = (await useBody(req)) as UserLogin;
 
   let user = await prisma.user.findUnique({ where: { email } });
@@ -16,4 +16,4 @@ export default async (req: unknown) => {
     },
   });
   return user;
-};
+});
