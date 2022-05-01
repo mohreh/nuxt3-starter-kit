@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { PlusIcon } from '@heroicons/vue/solid';
+
 const count = ref(0);
 const increment = () => count.value++;
 </script>
@@ -10,7 +12,7 @@ const increment = () => count.value++;
       @click="increment"
       class="px-5 mx-2 rounded border-solid border-2 border-gray-500"
     >
-      +
+      <PlusIcon class="h-5 w-5" />
     </button>
   </div>
 </template>
