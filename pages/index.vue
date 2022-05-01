@@ -17,5 +17,6 @@ const increment = () => count.value++;
       <PlusIcon class="h-5 w-5" />
     </button>
     <p>pos: {{ x }} and {{ y }}</p>
+    <FormKit type="text" />
   </div>
 </template>

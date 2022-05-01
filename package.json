@@ -23,6 +23,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.0.0-beta.6",
     "@heroicons/vue": "^1.0.6"
   }
 }
