@@ -12,6 +12,5 @@ const { data: me } = await useFetch(
 <template>
   <div>
     {{ me }}
-    <h1>{{ me.email }}</h1>
   </div>
 </template>

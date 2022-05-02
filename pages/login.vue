@@ -5,6 +5,7 @@ const loginBody = reactive({
 });
 
 const loginError = ref('');
+const router = useRouter();
 
 const submit = async () => {
   if (!loginBody.email) {
@@ -19,6 +20,7 @@ const submit = async () => {
       loginError.value = res.error.value;
     } else {
       loginError.value = '';
+      router.push('/profile');
     }
   }
 };
