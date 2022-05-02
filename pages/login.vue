@@ -22,9 +22,6 @@ const submit = async () => {
     }
   }
 };
-const me = async () => {
-  await $fetch('/api/users/me');
-};
 </script>
 
 <template>
@@ -34,7 +31,6 @@ const me = async () => {
       <FormKit type="text" v-model="loginBody.name" placeholder="name" />
       <button @click="submit">submit</button>
     </div>
-    <button @click="me">me</button>
 
     <p v-if="loginError">{{ loginError }}</p>
   </div>
