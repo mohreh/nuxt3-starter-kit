@@ -1,26 +1,17 @@
 <script lang="ts" setup>
-// definePageMeta({
-//  middleware: 'auth',
-// });
-// I like use middleware but they are fucked up, full of errors that i dont understand how to work with them
-
-const router = useRouter();
-let pending = true;
-let me = ref({} as UserLogin);
-
-onBeforeMount(async () => {
-  me.value = await $fetch('/api/users/me');
-
-  pending = false;
-  if (!me.value.email) {
-    router.push('/login');
-  }
+definePageMeta({
+  middleware: 'auth',
 });
+// I like use middleware but they are fucked up, full of errors that i dont understand how to work with them
+const route = useRoute();
+const { data: me } = await useFetch(
+  `/api/users/me?token=${route.params.token}`,
+);
 </script>
 
 <template>
-  <div v-if="!pending">
+  <div>
+    {{ me }}
     <h1>{{ me.email }}</h1>
   </div>
-  <div v-else-if="me.email">{{ me }}</div>
 </template>
