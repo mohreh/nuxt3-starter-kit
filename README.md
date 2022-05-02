@@ -14,6 +14,19 @@ yarn install
 npm install
 ```
 
+Make sure to initialize prisma:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+create .env file:
+
+```
+JWT_SECRET
+JWT_EXP
+```
+
 ## Development Server
 
 Start the development server on http://localhost:3000
