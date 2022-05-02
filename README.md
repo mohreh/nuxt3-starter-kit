@@ -20,11 +20,12 @@ Make sure to initialize prisma:
 npx prisma migrate dev --name init
 ```
 
-create .env file:
+create .env file and edit this variables:
 
 ```
 JWT_SECRET
 JWT_EXP
+DATABASE_URL
 ```
 
 ## Development Server
